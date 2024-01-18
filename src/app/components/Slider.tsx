@@ -33,11 +33,12 @@ const Slider: React.FC<SliderProps> = ({items}) => {
       <div className="">
         {items.map((item, index) => (
           <div
+            // eslint-disable-next-line react/no-array-index-key
             key={index}
             className={
               index === current
-                ? 'duration-2000 opacity-100 transition-opacity ease-in'
-                : 'duration-2000 opacity-0 transition-opacity ease-in'
+                ? 'opacity-100 transition-opacity duration-2000 ease-in'
+                : 'opacity-0 transition-opacity duration-2000 ease-in'
             }>
             <FaArrowCircleLeft
               onClick={prevSlide}
